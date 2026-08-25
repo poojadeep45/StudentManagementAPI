@@ -2,6 +2,7 @@ package com.example.StudentManagementAPI.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,6 +13,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.web.util.pattern.PathPatternRouteMatcher;
 
 @Configuration
+@Profile("!railway")
 public class Oauth2ClientConfig {
     @Bean
     @Order(3)
