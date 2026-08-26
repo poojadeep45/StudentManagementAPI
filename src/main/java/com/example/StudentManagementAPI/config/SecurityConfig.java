@@ -39,6 +39,7 @@ public class SecurityConfig {
                         .requestMatchers(org.springframework.http.HttpMethod.POST, "/**").authenticated()
                         .requestMatchers(org.springframework.http.HttpMethod.PUT, "/**").authenticated()
                         .requestMatchers(org.springframework.http.HttpMethod.DELETE, "/**").hasRole("ADMIN")
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 // JWTs are stateless by design — the server keeps no memory of who's
