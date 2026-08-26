@@ -1,5 +1,6 @@
 package com.example.StudentManagementAPI.Entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -33,8 +34,10 @@ public class User  {
     private String password;
 
     @Builder.Default
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String userRole =  "USER";
 
     @Builder.Default
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private boolean isVerified = false; // for the email verification flow later
 }
